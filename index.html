@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo Life Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Storage error banner (non-blocking, shown when localStorage is unavailable) -->
+    <div id="storage-error-banner" role="alert" aria-live="polite" hidden></div>
+
+    <main class="dashboard">
+
+      <!-- Panel 1: Greeting Panel -->
+      <section id="greeting-panel" aria-labelledby="greeting-heading">
+        <h2 id="greeting-heading" class="panel-heading">Welcome</h2>
+        <p id="greeting-text" aria-live="polite"></p>
+        <time id="clock" aria-label="Current time"></time>
+        <p id="date" aria-label="Current date"></p>
+      </section>
+
+      <!-- Panel 2: Focus Timer -->
+      <section id="focus-timer" aria-labelledby="timer-heading">
+        <h2 id="timer-heading" class="panel-heading">Focus Timer</h2>
+        <div id="timer-display" aria-live="polite" aria-label="Timer display">25:00</div>
+        <div class="timer-controls" role="group" aria-label="Timer controls">
+          <button id="btn-start" type="button">Start</button>
+          <button id="btn-stop" type="button" disabled>Stop</button>
+          <button id="btn-reset" type="button">Reset</button>
+        </div>
+      </section>
+
+      <!-- Panel 3: Task Manager -->
+      <section id="task-manager" aria-labelledby="task-heading">
+        <h2 id="task-heading" class="panel-heading">Tasks</h2>
+        <div class="task-input-row">
+          <label for="task-input" class="sr-only">New task description</label>
+          <input
+            id="task-input"
+            type="text"
+            maxlength="200"
+            placeholder="Add a new task…"
+            aria-describedby="task-validation-msg"
+          />
+          <button id="btn-add-task" type="button">Add</button>
+        </div>
+        <p id="task-validation-msg" role="alert" aria-live="polite" hidden></p>
+        <ul id="task-list" aria-label="Task list" aria-live="polite"></ul>
+      </section>
+
+      <!-- Panel 4: Quick Links -->
+      <section id="quick-links" aria-labelledby="links-heading">
+        <h2 id="links-heading" class="panel-heading">Quick Links</h2>
+        <div class="link-input-group">
+          <label for="link-label-input" class="sr-only">Link label</label>
+          <input
+            id="link-label-input"
+            type="text"
+            maxlength="100"
+            placeholder="Label (max 100 chars)"
+          />
+          <label for="link-url-input" class="sr-only">Link URL</label>
+          <input
+            id="link-url-input"
+            type="url"
+            maxlength="2048"
+            placeholder="https://example.com"
+          />
+          <button id="btn-add-link" type="button">Add Link</button>
+        </div>
+        <div id="links-container" aria-label="Saved links" aria-live="polite"></div>
+      </section>
+
+    </main>
+
+    <script src="js/app.js" defer></script>
+  </body>
+</html>

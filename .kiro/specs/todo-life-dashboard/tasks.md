@@ -8,7 +8,7 @@ Implement a zero-dependency, single-page productivity dashboard as three static 
 
 ## Tasks
 
-- [ ] 1. Scaffold project structure and HTML skeleton
+- [x] 1. Scaffold project structure and HTML skeleton
   - Create `index.html` with the four panel sections: `#greeting-panel`, `#focus-timer`, `#task-manager`, `#quick-links`
   - Add semantic landmark elements, all required `id` attributes referenced in the design (`#greeting-text`, `#clock`, `#date`, `#timer-display`, `#btn-start`, `#btn-stop`, `#btn-reset`, `#task-input`, `#btn-add-task`, `#task-list`, `#task-validation-msg`, `#link-label-input`, `#link-url-input`, `#btn-add-link`, `#links-container`, `#storage-error-banner`)
   - Link `<link rel="stylesheet" href="css/styles.css">` and `<script src="js/app.js" defer></script>` — no external CDN references
@@ -17,7 +17,7 @@ Implement a zero-dependency, single-page productivity dashboard as three static 
   - _Requirements: 14.1, 14.2, 14.3, 15.1_
 
 - [ ] 2. Implement GreetingPanel module
-  - [ ] 2.1 Implement clock, date, and greeting rendering
+  - [-] 2.1 Implement clock, date, and greeting rendering
     - Inside `GreetingPanel` IIFE implement `renderClock(date)` → `"HH:MM"` (24-hour, zero-padded), `renderDate(date)` → `"Weekday, DD Month YYYY"`, and `renderGreeting(date)` using the hour ranges: 0–11 → "Good Morning", 12–17 → "Good Afternoon", 18–23 → "Good Evening"
     - Implement `update()` calling all three render functions with `new Date()`
     - Call `update()` immediately on `GreetingPanel.init()` then schedule `setInterval(update, 60000)`
@@ -36,14 +36,14 @@ Implement a zero-dependency, single-page productivity dashboard as three static 
     - **Validates: Requirements 1.1**
 
 - [ ] 3. Implement FocusTimer module
-  - [ ] 3.1 Implement timer state machine and display formatting
+  - [-] 3.1 Implement timer state machine and display formatting
     - Declare `state` (`'IDLE' | 'RUNNING' | 'PAUSED' | 'FINISHED'`), `remainingSeconds = 1500`, `intervalId = null`
     - Implement `formatDisplay(seconds)` → zero-padded `"MM:SS"` string
     - Implement `syncControls()` to enable/disable `#btn-start`, `#btn-stop`, `#btn-reset` according to the design's control matrix
     - Render `"25:00"` on `FocusTimer.init()`
     - _Requirements: 3.1, 4.1, 4.6_
 
-  - [ ] 3.2 Implement start, stop, reset handlers and countdown tick
+  - [~] 3.2 Implement start, stop, reset handlers and countdown tick
     - Implement `handleStart()`: guard if `state === 'RUNNING'`; set state to `'RUNNING'`; call `setInterval(tick, 1000)`
     - Implement `handleStop()`: `clearInterval`, set state to `'PAUSED'`, call `syncControls()`
     - Implement `handleReset()`: `clearInterval`, reset `remainingSeconds = 1500`, set state to `'IDLE'`, render `"25:00"`, call `syncControls()`
@@ -51,7 +51,7 @@ Implement a zero-dependency, single-page productivity dashboard as three static 
     - Wire click listeners on `#btn-start`, `#btn-stop`, `#btn-reset`
     - _Requirements: 3.2, 3.3, 3.5, 4.2, 4.3, 4.4, 4.5, 4.7_
 
-  - [ ] 3.3 Implement finish state, visual indicator, and audio alert
+  - [~] 3.3 Implement finish state, visual indicator, and audio alert
     - Implement `finish()`: `clearInterval`, set state to `'FINISHED'`, show completion indicator (e.g., add `.finished` class to `#timer-display`), call `playAlert()`, call `syncControls()`
     - Implement `playAlert()`: create `new Audio(BEEP_DATA_URI).play()` where `BEEP_DATA_URI` is a Base64-encoded WAV constant declared at the top of the FocusTimer IIFE
     - _Requirements: 3.4_
@@ -68,11 +68,11 @@ Implement a zero-dependency, single-page productivity dashboard as three static 
     - Tag: `// Feature: todo-life-dashboard, Property 12: Timer countdown decrements monotonically`
     - **Validates: Requirements 3.2, 3.3, 3.4**
 
-- [ ] 4. Checkpoint — Timer and Greeting
+- [~] 4. Checkpoint — Timer and Greeting
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 5. Implement TaskManager module — core CRUD
-  - [ ] 5.1 Implement localStorage helpers and task data model
+  - [-] 5.1 Implement localStorage helpers and task data model
     - Implement `loadTasks()`: `localStorage.getItem('tdl_tasks')` wrapped in `try/catch`; return `JSON.parse(raw) ?? []`; on error show `#storage-error-banner` and return `[]`
     - Implement `saveTasks(tasks)`: `localStorage.setItem('tdl_tasks', JSON.stringify(tasks))` wrapped in `try/catch`; on error show inline error
     - Define task factory `createTask(description)` returning `{ id: crypto.randomUUID(), description: description.trim(), completed: false, createdAt: Date.now() }`
@@ -84,7 +84,7 @@ Implement a zero-dependency, single-page productivity dashboard as three static 
     - Tag: `// Feature: todo-life-dashboard, Property 5: Task persistence round-trip`
     - **Validates: Requirements 9.1, 9.2**
 
-  - [ ] 5.3 Implement add-task flow with validation
+  - [~] 5.3 Implement add-task flow with validation
     - Implement `validateDescription(value)` returning `{ valid: boolean, message?: string }`: reject empty/whitespace; reject > 200 chars
     - Implement `handleAdd()`: read `#task-input` value, validate, on valid call `createTask`, push to in-memory array, `saveTasks`, re-render list, clear input; on invalid show `#task-validation-msg`
     - Wire Enter keydown on `#task-input` and click on `#btn-add-task`
@@ -103,13 +103,13 @@ Implement a zero-dependency, single-page productivity dashboard as three static 
     - Tag: `// Feature: todo-life-dashboard, Property 4: Whitespace and over-limit inputs are rejected`
     - **Validates: Requirements 5.3, 5.4**
 
-  - [ ] 5.6 Implement task list rendering with event delegation
+  - [~] 5.6 Implement task list rendering with event delegation
     - Implement `renderTasks(tasks)`: clears `#task-list` and rebuilds all `<li>` elements from the array; each `<li>` contains a completion checkbox, description `<span>` (strikethrough when `completed`), edit button, and delete button with `data-id` attributes
     - Attach a single delegated click listener on `#task-list` dispatching to `handleToggle`, `handleEdit`, or `handleDelete` based on `event.target` role
     - Call `renderTasks` on `TaskManager.init()` after `loadTasks()`
     - _Requirements: 7.1, 7.6, 8.1_
 
-  - [ ] 5.7 Implement toggle-complete, delete, and edit/cancel/confirm
+  - [~] 5.7 Implement toggle-complete, delete, and edit/cancel/confirm
     - Implement `handleToggle(id)`: flip `completed`, `saveTasks`, re-render — _Requirements: 7.2, 7.3, 7.4, 7.5_
     - Implement `handleDelete(id)`: filter task out of array, `saveTasks`, re-render — _Requirements: 8.2, 8.3, 8.4_
     - Implement `handleEdit(id)`: cancel any open edit, replace description `<span>` with an `<input>` (max 500) pre-filled with current description, show confirm + cancel buttons — _Requirements: 6.1, 6.2, 6.6_
@@ -134,7 +134,7 @@ Implement a zero-dependency, single-page productivity dashboard as three static 
     - Tag: `// Feature: todo-life-dashboard, Property 8: Delete removes exactly the target task`
     - **Validates: Requirements 8.2, 8.3**
 
-- [ ] 6. Checkpoint — TaskManager
+- [~] 6. Checkpoint — TaskManager
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 7. Implement QuickLinks module
@@ -149,7 +149,7 @@ Implement a zero-dependency, single-page productivity dashboard as three static 
     - Tag: `// Feature: todo-life-dashboard, Property 11: Link persistence round-trip`
     - **Validates: Requirements 13.1**
 
-  - [ ] 7.3 Implement add-link flow with URL and label validation
+  - [~] 7.3 Implement add-link flow with URL and label validation
     - Implement `validateUrl(value)`: accept only strings starting with `http://` or `https://` (case-sensitive), non-empty, ≤ 2048 chars
     - Implement `validateLabel(value)`: non-empty, non-whitespace, ≤ 100 chars
     - Implement `handleAddLink()`: validate both fields; on valid create link, push, `saveLinks`, re-render; on invalid show per-field inline validation messages
@@ -162,7 +162,7 @@ Implement a zero-dependency, single-page productivity dashboard as three static 
     - Tag: `// Feature: todo-life-dashboard, Property 9: URL validation accepts only http/https`
     - **Validates: Requirements 10.2, 10.4**
 
-  - [ ] 7.5 Implement link rendering with truncation, open, and delete
+  - [~] 7.5 Implement link rendering with truncation, open, and delete
     - Implement `truncateLabel(label, max = 50)`: return label if ≤ max chars; else first 50 chars + `…`
     - Implement `renderLinks(links)`: rebuild `#links-container`; each entry is a button (showing truncated label) + delete button with `data-id`; disabled state if url is empty/missing
     - Implement `handleOpenLink(url)`: call `window.open(url, '_blank')`; if return value is `null` show inline error message — _Requirements: 11.1, 11.3, 11.4_
@@ -177,16 +177,16 @@ Implement a zero-dependency, single-page productivity dashboard as three static 
     - Tag: `// Feature: todo-life-dashboard, Property 10: Link label display truncation`
     - **Validates: Requirements 11.2**
 
-- [ ] 8. Checkpoint — QuickLinks
+- [~] 8. Checkpoint — QuickLinks
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 9. Implement CSS layout and visual design
-  - [ ] 9.1 Implement responsive CSS Grid dashboard layout
+  - [~] 9.1 Implement responsive CSS Grid dashboard layout
     - Style the four-panel grid in `css/styles.css`: two-column layout on wide viewports, single-column on narrow (≤ 600 px)
     - Ensure no element obscures or overlaps another panel
     - _Requirements: 15.4_
 
-  - [ ] 9.2 Implement typography, contrast, and interactive feedback
+  - [~] 9.2 Implement typography, contrast, and interactive feedback
     - Set base font size ≥ 14 px for body text; section headings visually distinct (larger or bolder)
     - Verify text-to-background contrast ≥ 4.5:1 for normal text and ≥ 3:1 for large text (18 px+) using chosen colour palette
     - Style interactive controls so visual state updates within 100 ms (use CSS transitions ≤ 100 ms; no JS delay needed)
@@ -197,17 +197,17 @@ Implement a zero-dependency, single-page productivity dashboard as three static 
     - _Requirements: 15.2, 15.3, 7.2, 7.3_
 
 - [ ] 10. Implement global error handling and edge-case guards
-  - [ ] 10.1 Wire storage-error banner and cross-panel error isolation
+  - [~] 10.1 Wire storage-error banner and cross-panel error isolation
     - Implement a shared `showStorageError(panelId, message)` helper that displays the error inside the relevant panel without affecting other panels
     - Verify `QuotaExceededError` and `SecurityError` from `localStorage` are caught in both `saveTasks` / `saveLinks` and display the banner
     - _Requirements: 9.4, 9.5, 14.4_
 
-  - [ ] 10.2 Implement malformed-JSON guard and timer edge-case guard
+  - [~] 10.2 Implement malformed-JSON guard and timer edge-case guard
     - Wrap `JSON.parse` in `loadTasks` and `loadLinks` in `try/catch`; on failure return `[]` and call `showStorageError`
     - Add guard in `tick()` to prevent `remainingSeconds` going below 0
     - _Requirements: 13.3, 9.5_
 
-- [ ] 11. Final checkpoint — full integration
+- [~] 11. Final checkpoint — full integration
   - Ensure all tests pass, ask the user if questions arise.
 
 ---

@@ -1,0 +1,175 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Scaffold project structure and HTML skeleton": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599856387
+      },
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599888374
+      },
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791600071417
+      }
+    ],
+    "2.1 Implement clock, date, and greeting rendering": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599859461
+      },
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791600076965
+      }
+    ],
+    "3.1 Implement timer state machine and display formatting": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599861021
+      },
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791600083260
+      }
+    ],
+    "3.2 Implement start, stop, reset handlers and countdown tick": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599862714
+      }
+    ],
+    "3.3 Implement finish state, visual indicator, and audio alert": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599863363
+      }
+    ],
+    "4. Checkpoint — Timer and Greeting": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599863815
+      }
+    ],
+    "5.1 Implement localStorage helpers and task data model": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599864614
+      },
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791600089628
+      }
+    ],
+    "5.3 Implement add-task flow with validation": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599865365
+      }
+    ],
+    "5.6 Implement task list rendering with event delegation": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599866197
+      }
+    ],
+    "5.7 Implement toggle-complete, delete, and edit/cancel/confirm": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599867782
+      }
+    ],
+    "6. Checkpoint — TaskManager": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599868417
+      }
+    ],
+    "7.1 Implement localStorage helpers and link data model": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599869531
+      },
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791600095844
+      }
+    ],
+    "7.3 Implement add-link flow with URL and label validation": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599870417
+      }
+    ],
+    "7.5 Implement link rendering with truncation, open, and delete": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599871379
+      }
+    ],
+    "8. Checkpoint — QuickLinks": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599871958
+      }
+    ],
+    "9.1 Implement responsive CSS Grid dashboard layout": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599872735
+      }
+    ],
+    "9.2 Implement typography, contrast, and interactive feedback": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599874768
+      }
+    ],
+    "10.1 Wire storage-error banner and cross-panel error isolation": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599875347
+      }
+    ],
+    "10.2 Implement malformed-JSON guard and timer edge-case guard": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599876892
+      }
+    ],
+    "11. Final checkpoint — full integration": [
+      {
+        "executionId": "d68d5eed-f8b4-4598-bb38-8b9f32df889f",
+        "chatSessionId": "sess_31bd4dc5-4f75-4d72-9181-247033c530ca",
+        "timestamp": 1791599878417
+      }
+    ]
+  }
+}
